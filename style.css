@@ -291,9 +291,13 @@ header {
 }
 
 
+button, select, input[type="text"], input[type="date"], input[type="file"] {
+
+
 button, select, input[type="text"], input[type="radio"] {
 
 button, select, input[type="text"], input[type="date"], input[type="file"] {
+
 
     font-family: var(--font-body);
 }
@@ -343,11 +347,17 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
 }
 
 
+#farm-form select, 
+#farm-form input[type="date"],
+#farm-form input[type="file"] {
+
+
 #farm-form select {
 
 #farm-form select,
 #farm-form input[type="date"],
 #farm-form input[type="file"] {
+
 
     padding: 0.7rem;
     border: 1px solid var(--subtle-grey);
@@ -369,6 +379,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
     background: #388E3C;
 }
 
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -377,6 +388,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
     }
 
     .nav-menu {
+
 
         flex-direction: column;
         gap: 0.5rem;
@@ -392,6 +404,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
 
     .nav-menu a:hover {
         border-bottom: none;
+
 
         display: none; 
         flex-direction: column;
@@ -423,6 +436,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
         padding-left: 1rem;
         height: 80vh; /* Adjust height for mobile */
 
+
     .web-lang-select {
         flex-direction: column;
         align-items: flex-start;
@@ -434,15 +448,22 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
         padding-right: 1rem;
         height: 80vh;
         align-items: flex-end; 
+
     
         background-position: center bottom; 
         background-size: contain; 
         background-repeat: no-repeat; 
 
+
     }
 
     .hero-content {
         padding: 2rem;
+
+        max-width: 100%;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        margin-bottom: 2rem;
+
 
         max-width: 90%;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -450,6 +471,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
         max-width: 100%;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         margin-bottom: 2rem;
+
 
     }
 
@@ -472,6 +494,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
     .input-page .container {
         flex-direction: column;
 
+
         padding: 1rem;
         gap: 1.5rem;
     }
@@ -480,6 +503,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
         padding: 1.5rem;
         max-width: 100%;
         min-width: unset;
+
 
         padding: 0.5rem; 
         gap: 1.5rem;
@@ -498,9 +522,13 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
     
     .site-footer {
 
+        padding: 1.5rem 1rem;
+
+
         padding: 1.5rem 0;
 
         padding: 1.5rem 1rem;
+
 
     }
 
