@@ -160,13 +160,18 @@
                                         <option>Maize</option>
                                         <option>Soybean</option>
                                     </select>
-                                    <label for="soil-type">Soil Type</label>
-                                    <select id="soil-type">
-                                        <option>Sandy</option>
-                                        <option>Clay</option>
-                                        <option>Loamy</option>
-                                        <option>Black</option>
+                                    
+                                    <label for="soil-character">Soil Character </label>
+                                    <select id="soil-character" name="soil-character">
+                                        <option value="">Not Sure</option>
+                                        <option value="black">Black </option>
+                                        <option value="red">Red </option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="brown">Brown</option>
+                                        <option value="fertile">High Fertility</option>
+                                        <option value="low-fertile">Low Fertility</option>
                                     </select>
+                                    
                                     <label for="irrigation">Irrigation Source</label>
                                     <select id="irrigation">
                                         <option>Canal</option>
@@ -179,8 +184,33 @@
                                         <option>Manual</option>
                                         <option>Machine</option>
                                     </select>
+                                    <label for="sowing-date">Sowing Date</label>
+                                    <input type="date" id="sowing-date" name="sowing-date">
+                                    
+                                    <label for="crop-stage">Crop Stage</label>
+                                    <select id="crop-stage" name="crop-stage">
+                                        <option value="">Select Stage</option>
+                                        <option value="Seedling">Seedling</option>
+                                        <option value="Vegetative">Vegetative</option>
+                                        <option value="Flowering">Flowering</option>
+                                        <option value="Harvesting">Harvesting</option>
+                                    </select>
+                                    
+                                    <label for="problem">Current Problem</label>
+                                    <select id="problem" name="problem">
+                                        <option value="">Select Problem</option>
+                                        <option value="Pest">Pest</option>
+                                        <option value="Irrigation">Irrigation Issue</option>
+                                        <option value="Fertilizer">Fertilizer Issue</option>
+                                        <option value="Disease">Disease</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    
+                                    <label for="image">Upload Image (optional)</label>
+                                    <input type="file" id="image" name="image" accept="image/*">
                                     <button type="submit" class="submit-btn">Submit</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
