@@ -1,7 +1,6 @@
 // Show form section on button click
 document.getElementById("show-form").onclick = function() {
     document.getElementById("form-section").style.display = "block";
-    document.getElementById("show-form").style.display = "none";
     document.querySelector(".form-heading").scrollIntoView({ behavior: "smooth" });
 };
 
@@ -64,6 +63,7 @@ if (farmForm) {
             location: document.getElementById("location").value,
             landSize: document.getElementById("land-size").value,
             crop: document.getElementById("crop").value,
+            soilType: document.getElementById("soil-type").value,
             soilCharacter: document.getElementById("soil-character").value,
             irrigation: document.getElementById("irrigation").value,
             sowing: document.getElementById("sowing").value,
@@ -71,6 +71,16 @@ if (farmForm) {
             cropStage: document.getElementById("crop-stage").value,
             problem: document.getElementById("problem").value
         };
+
+        const imageFile = document.getElementById("image").files[0];
+
+        if (imageFile) {
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                console.log("Image data:", reader.result);
+            };
+            reader.readAsDataURL(imageFile);
+        }
 
         console.log("Form Data:", formData);
         alert("Farm details submitted successfully!");
