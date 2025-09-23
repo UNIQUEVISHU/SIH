@@ -419,81 +419,81 @@ const navTranslations = {
     }
 };
 
-const selects = {
-    location: document.getElementById("location"),
-    landSize: document.getElementById("land-size"),
-    crop: document.getElementById("crop"),
-    soilType: document.getElementById("soil-type"),
-    soilCharacter: document.getElementById("soil-character"),
-    irrigation: document.getElementById("irrigation"),
-    sowing: document.getElementById("sowing"),
-    cropStage: document.getElementById("crop-stage"),
-    problem: document.getElementById("problem")
+const navElements = {
+    home: document.querySelector(".nav-menu a:nth-of-type(1)"),
+    myFarm: document.querySelector(".nav-menu a:nth-of-type(2)"),
+    toDoList: document.querySelector(".nav-menu a:nth-of-type(3)"),
+    localTrend: document.querySelector(".nav-menu a:nth-of-type(4)"),
+    feedback: document.querySelector(".nav-menu a:nth-of-type(5)"),
+    search: document.querySelector(".search-bar"),
+    websiteLanguage: document.querySelector("label[for='web-language']"),
+    heroTitle: document.querySelector(".hero-content h2"),
+    heroSubtitle: document.querySelector(".hero-content .subtitle"),
+    heroDate: document.querySelector(".hero-content .date"),
+    ctaButton: document.getElementById("show-form"),
+    formHeading: document.querySelector(".form-heading"),
+    voiceInputTitle: document.querySelector(".left-panel h3"),
+    voiceInputSubtitle: document.querySelector(".left-panel p"),
+    formDetailsHeading: document.querySelector(".right-panel h3"),
+    submitBtn: document.querySelector(".submit-btn"),
+    footerLogo: document.querySelector(".footer-logo span"),
+    footerSchemes: document.querySelector(".footer-links a:nth-child(2)"),
+    footerMarketPrices: document.querySelector(".footer-links a:nth-child(3)"),
+    footerContact: document.querySelector(".footer-links a:nth-child(4)")
 };
 
-const labels = {
-    location: document.querySelector("label[for='location']"),
-    landSize: document.querySelector("label[for='land-size']"),
-    crop: document.querySelector("label[for='crop']"),
-    soilType: document.querySelector("label[for='soil-type']"),
-    soilCharacter: document.querySelector("label[for='soil-character']"),
-    irrigation: document.querySelector("label[for='irrigation']"),
-    sowing: document.querySelector("label[for='sowing']"),
-    sowingDate: document.querySelector("label[for='sowing-date']"),
-    cropStage: document.querySelector("label[for='crop-stage']"),
-    problem: document.querySelector("label[for='problem']"),
-    uploadImage: document.querySelector("label[for='image']")
-};
-
-function updateFormOptions(lang) {
-    const opts = formOptions[lang] || formOptions.en;
-    Object.keys(selects).forEach(key => {
-        const select = selects[key];
-        if (!select) return;
-        while (select.options.length) select.remove(0);
-        opts[key].forEach(val => {
-            const option = document.createElement("option");
-            option.textContent = val;
-            select.appendChild(option);
-        });
-    });
+function updateWebsiteLabels(lang) {
+    const labels = navTranslations[lang] || navTranslations.en;
+    if (navElements.home) navElements.home.textContent = labels.home;
+    if (navElements.myFarm) navElements.myFarm.textContent = labels.myFarm;
+    if (navElements.toDoList) navElements.toDoList.textContent = labels.toDoList;
+    if (navElements.localTrend) navElements.localTrend.textContent = labels.localTrend;
+    if (navElements.feedback) navElements.feedback.textContent = labels.feedback;
+    if (navElements.search) navElements.search.placeholder = labels.search;
+    if (navElements.websiteLanguage) navElements.websiteLanguage.textContent = labels.websiteLanguage;
+    if (navElements.heroTitle) navElements.heroTitle.textContent = labels.heroTitle;
+    if (navElements.heroSubtitle) navElements.heroSubtitle.textContent = labels.heroSubtitle;
+    if (navElements.heroDate) navElements.heroDate.textContent = labels.heroDate;
+    if (navElements.ctaButton) navElements.ctaButton.textContent = labels.ctaButton;
+    if (navElements.formHeading) navElements.formHeading.textContent = labels.formHeading;
+    if (navElements.voiceInputTitle) navElements.voiceInputTitle.textContent = labels.voiceInputTitle;
+    if (navElements.voiceInputSubtitle) navElements.voiceInputSubtitle.textContent = labels.voiceInputSubtitle;
+    if (navElements.formDetailsHeading) navElements.formDetailsHeading.textContent = labels.formDetailsHeading;
+    if (navElements.submitBtn) navElements.submitBtn.textContent = labels.submitBtn;
+    if (navElements.footerLogo) navElements.footerLogo.textContent = labels.footerLogo;
+    if (navElements.footerSchemes) navElements.footerSchemes.textContent = labels.footerSchemes;
+    if (navElements.footerMarketPrices) navElements.footerMarketPrices.textContent = labels.footerMarketPrices;
+    if (navElements.footerContact) navElements.footerContact.textContent = labels.footerContact;
 }
 
-function updateFormLabels(lang) {
-    const l = formLabels[lang] || formLabels.en;
-    for (const key in labels) {
-        if (labels[key]) {
-            labels[key].textContent = l[key];
-        }
-    }
-}
-
-const formLangSelect = document.getElementById("form-language");
 const webLangSelect = document.getElementById("web-language");
+const formLangSelect = document.getElementById("form-language");
 
-function handleFormLanguageChange(lang) {
-    updateFormLabels(lang);
-    updateFormOptions(lang);
-    if (webLangSelect && webLangSelect.value !== lang) {
-        webLangSelect.value = lang;
-        if (typeof updateWebsiteLabels === 'function') {
-            updateWebsiteLabels(lang);
+function handleWebsiteLanguageChange(lang) {
+    updateWebsiteLabels(lang);
+    // Sync with the form language dropdown
+    if (formLangSelect && formLangSelect.value !== lang) {
+        formLangSelect.value = lang;
+        if (typeof updateFormLabels === 'function' && typeof updateFormOptions === 'function') {
+            updateFormLabels(lang);
+            updateFormOptions(lang);
         }
     }
+}
+
+// Event listeners for both dropdowns
+if (webLangSelect) {
+    webLangSelect.addEventListener("change", function() {
+        handleWebsiteLanguageChange(this.value);
+    });
+    // This part is crucial for initial page load
+    handleWebsiteLanguageChange(webLangSelect.value);
 }
 
 if (formLangSelect) {
     formLangSelect.addEventListener("change", function() {
-        handleFormLanguageChange(this.value);
-    });
-    handleFormLanguageChange(formLangSelect.value);
-}
-
-// Add an event listener for the web-language dropdown to sync with the form
-if (webLangSelect) {
-    webLangSelect.addEventListener("change", function() {
-        if (formLangSelect.value !== this.value) {
-            handleFormLanguageChange(this.value);
+        if (webLangSelect.value !== this.value) {
+            handleWebsiteLanguageChange(this.value);
         }
     });
 }
