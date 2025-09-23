@@ -1,8 +1,8 @@
-// Dropdown option translations for supported languages
+// Dropdown operation translations
 const formOptions = {
     en: {
         location: ["Select Location", "Auto-detect GPS", "District A", "District B", "District C"],
-        landSize: ["<1 acre", "1–5 acres", "5+ acres"],
+        landSize: ["<1 acre", "1-5 acres", "5+ acres"],
         crop: ["Wheat", "Rice", "Maize", "Soybean"],
         soilType: ["Sandy", "Clay", "Loamy", "Black"],
         soilCharacter: ["Select Soil Character", "Not Sure", "Black", "Red", "Yellow", "Brown", "High Fertility", "Low Fertility"],
@@ -13,7 +13,7 @@ const formOptions = {
     },
     hi: {
         location: ["स्थान चुनें", "ऑटो-डिटेक्ट GPS", "जिला A", "जिला B", "जिला C"],
-        landSize: ["<1 एकड़", "1–5 एकड़", "5+ एकड़"],
+        landSize: ["<1 एकड़", "1-5 एकड़", "5+ एकड़"],
         crop: ["गेहूं", "चावल", "मक्का", "सोयाबीन"],
         soilType: ["रेतीली", "चिकनी", "दोमट", "काली"],
         soilCharacter: ["मिट्टी का चरित्र चुनें", "सुनिश्चित नहीं", "काली", "लाल", "पीली", "भूरी", "उच्च उर्वरता", "कम उर्वरता"],
@@ -24,7 +24,7 @@ const formOptions = {
     },
     pa: {
         location: ["ਟਿਕਾਣਾ ਚੁਣੋ", "ਆਟੋ-ਡਿਟੈਕਟ GPS", "ਜ਼ਿਲਾ A", "ਜ਼ਿਲਾ B", "ਜ਼ਿਲਾ C"],
-        landSize: ["<1 ਏਕੜ", "1–5 ਏਕੜ", "5+ ਏਕੜ"],
+        landSize: ["<1 ਏਕੜ", "1-5 ਏਕੜ", "5+ ਏਕੜ"],
         crop: ["ਗੰਧੁਮ", "ਚੌਲ", "ਮੱਕੀ", "ਸੋਯਾਬੀਨ"],
         soilType: ["ਰੇਤਲੀ", "ਚਿਕਣੀ", "ਦੋਮਟ", "ਕਾਲੀ"],
         soilCharacter: ["ਮਿੱਟੀ ਦਾ ਅੱਖਰ ਚੁਣੋ", "ਯਕੀਨੀ ਨਹੀਂ", "ਕਾਲਾ", "ਲਾਲ", "ਪੀਲਾ", "ਭੂਰਾ", "ਉੱਚ ਉਪਜਾਊ ਸ਼ਕਤੀ", "ਘੱਟ ਉਪਜਾਊ ਸ਼ਕਤੀ"],
@@ -32,6 +32,17 @@ const formOptions = {
         sowing: ["ਹੱਥ ਨਾਲ", "ਮਸ਼ੀਨ ਨਾਲ"],
         cropStage: ["ਸਟੇਜ ਚੁਣੋ", "ਪੌਦਾ", "ਸਬਜ਼ੀ", "ਫੁੱਲ", "ਕਟਾਈ"],
         problem: ["ਸਮੱਸਿਆ ਚੁਣੋ", "ਖਾਦ ਮੁੱਦਾ", "ਸਿੰਚਾਈ ਮੁੱਦਾ", "ਰੋਗ", "ਕੀਟ", "ਹੋਰ"]
+    },
+    ml: {
+        location: ["സ്ഥലം തിരഞ്ഞെടുക്കുക", "ഓട്ടോ-ഡിറ്റക്റ്റ് GPS", "ജില്ല A", "ജില്ല B", "ജില്ല C"],
+        landSize: ["<1 ഏക്കർ", "1-5 ഏക്കർ", "5+ ഏക്കർ"],
+        crop: ["ഗോതമ്പ്", "അരി", "ചോളം", "സോയാബീൻ"],
+        soilType: ["മണലിൽ", "കളിമണ്ണ്", "പശിമരാശി", "കറുപ്പ്"],
+        soilCharacter: ["മണ്ണിന്റെ സ്വഭാവം തിരഞ്ഞെടുക്കുക", "ഉറപ്പില്ല", "കറുപ്പ്", "ചുവപ്പ്", "മഞ്ഞ", "തവിട്ട്", "ഉയർന്ന ഫലഭൂയിഷ്ഠത", "കുറഞ്ഞ ഫലഭൂയിഷ്ഠത"],
+        irrigation: ["കനാൽ", "കുഴൽക്കിണർ", "മഴയെ ആശ്രയിച്ചുള്ള", "കുളം"],
+        sowing: ["കൈകൊണ്ട്", "മെഷീൻ കൊണ്ട്"],
+        cropStage: ["ഘട്ടം തിരഞ്ഞെടുക്കുക", "വിത്ത്", "സസ്യങ്ങൾ", "പൂവിടൽ", "വിളവെടുപ്പ്"],
+        problem: ["പ്രശ്നം തിരഞ്ഞെടുക്കുക", "വളം പ്രശ്നം", "നനയ്ക്കൽ പ്രശ്നം", "രോഗം", "കീടം", "മറ്റുള്ളവ"]
     },
     mr: {
         location: ["स्थान निवडा", "ऑटो-डिटेक्ट GPS", "जिल्हा A", "जिल्हा B", "जिल्हा C"],
@@ -49,7 +60,7 @@ const formOptions = {
         landSize: ["<1 એકર", "1–5 એકર", "5+ એકર"],
         crop: ["ઘઉં", "ચોખા", "મકાઈ", "સોયાબીન"],
         soilType: ["રેતાળ", "ચીકણી", "ગોરાડુ", "કાળી"],
-        soilCharacter: ["માટીનો પ્રકાર પસંદ કરો", "ખબર નથી", "કાળી", "લાલ", "પીળી", "ભૂરી", "ઉચ્ચ ફળદ્રુપતા", "ઓછી ફળદ્રુપતા"],
+        soilCharacter: ["માટીનો પ્રકાર પસંદ કરો", "ખબર નથી", "કાળી", "લાલ", "પિળી", "ભૂરી", "ઉચ્ચ ફળદ્રુપતા", "ઓછી ફળદ્રુપતા"],
         irrigation: ["નહેર", "ટ્યુબવેલ", "વરસાદ આધારિત", "તળાવ"],
         sowing: ["હાથથી", "મશીનથી"],
         cropStage: ["તબક્કો પસંદ કરો", "બીજ", "વૃક્ષારોપણ", "ફૂલ", "લણણી"],
@@ -126,7 +137,7 @@ const formOptions = {
         landSize: ["<1 একৰ", "1–5 একৰ", "5+ একৰ"],
         crop: ["ঘেঁহু", "ধান", "মাকৈ", "ছয়াবিন"],
         soilType: ["বালি", "চিনামাটি", "দোআঁশ", "কলা"],
-        soilCharacter: ["মাটিৰ চৰিত্ৰ বাছক", "নিশ্চিত নহয়", "কলা", "ৰঙা", "হালধীয়া", "মুগা", "উচ্চ উর্বৰতা", "কম উর্বৰতা"],
+        soilCharacter: ["মাটিৰ চৰਿਤ্ৰ বাছক", "নিশ্চিত নহয়", "কলা", "ৰঙা", "হালধীয়া", "মুগা", "উচ্চ উর্বৰতা", "কম উর্বৰতা"],
         irrigation: ["খাল", "টিউবৱেল", "বৰষুণৰ ওপৰত নিৰ্ভৰশীল", "পুখুৰী"],
         sowing: ["হাতেৰে", "যন্ত্ৰৰে"],
         cropStage: ["স্তৰ বাছক", "গছপুলি", "উদ্ভিদ", "ফুলা", "শস্য চপোৱা"],
@@ -211,7 +222,6 @@ const formOptions = {
     }
 };
 
-// Form label translations for supported languages
 const formLabels = {
     en: {
         location: "Location",
@@ -310,7 +320,7 @@ const formLabels = {
         crop: "పంట",
         soilType: "మట్టి రకం",
         soilCharacter: "నేల లక్షణం",
-        irrigation: "పారిశుध्य మూలం",
+        irrigation: "పారిశుధ్య మూలం",
         sowing: "విత్తన రకం",
         sowingDate: "విత్తన తేదీ",
         cropStage: "పంట దశ",
@@ -332,7 +342,7 @@ const formLabels = {
     },
     ml: {
         location: "സ്ഥലം",
-        landSize: "ഭൂമി വലിപ്പം",
+        landSize: "ഭൂമി ವലിപ്പം",
         crop: "വിള",
         soilType: "മണ്ണിന്റെ തരം",
         soilCharacter: "മണ്ണിന്റെ സ്വഭാവം",
@@ -470,7 +480,6 @@ const selects = {
     soilCharacter: document.getElementById("soil-character"),
     irrigation: document.getElementById("irrigation"),
     sowing: document.getElementById("sowing"),
-    sowingDate: document.getElementById("sowing-date"),
     cropStage: document.getElementById("crop-stage"),
     problem: document.getElementById("problem")
 };
@@ -491,16 +500,16 @@ const labels = {
 
 function updateFormOptions(lang) {
     const opts = formOptions[lang] || formOptions.en;
-    for (const key in selects) {
+    Object.keys(selects).forEach(key => {
         const select = selects[key];
-        if (!select) continue;
+        if (!select) return;
         while (select.options.length) select.remove(0);
         opts[key].forEach(val => {
             const option = document.createElement("option");
             option.textContent = val;
             select.appendChild(option);
         });
-    }
+    });
 }
 
 function updateFormLabels(lang) {
@@ -513,11 +522,25 @@ function updateFormLabels(lang) {
 }
 
 const formLangSelect = document.getElementById("form-language");
+const webLangSelect = document.getElementById("web-language");
+
+function handleFormLanguageChange(lang) {
+    updateFormLabels(lang);
+    updateFormOptions(lang);
+    // Sync with the website language dropdown
+    if (webLangSelect && webLangSelect.value !== lang) {
+        webLangSelect.value = lang;
+        if (typeof updateWebsiteLabels === 'function') {
+            updateWebsiteLabels(lang);
+        }
+    }
+}
+
+// Initial update
 if (formLangSelect) {
     formLangSelect.addEventListener("change", function() {
-        updateFormLabels(this.value);
-        updateFormOptions(this.value);
+        handleFormLanguageChange(this.value);
     });
-    updateFormLabels(formLangSelect.value);
-    updateFormOptions(formLangSelect.value);
+    // This part is crucial for initial page load if the language is not English
+    handleFormLanguageChange(formLangSelect.value);
 }
