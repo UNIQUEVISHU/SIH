@@ -527,7 +527,7 @@ const webLangSelect = document.getElementById("web-language");
 function handleFormLanguageChange(lang) {
     updateFormLabels(lang);
     updateFormOptions(lang);
-    // Sync with the website language dropdown
+
     if (webLangSelect && webLangSelect.value !== lang) {
         webLangSelect.value = lang;
         if (typeof updateWebsiteLabels === 'function') {
@@ -536,11 +536,11 @@ function handleFormLanguageChange(lang) {
     }
 }
 
-// Initial update
+
 if (formLangSelect) {
     formLangSelect.addEventListener("change", function() {
         handleFormLanguageChange(this.value);
     });
-    // This part is crucial for initial page load if the language is not English
+
     handleFormLanguageChange(formLangSelect.value);
 }
