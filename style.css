@@ -147,6 +147,7 @@ header {
     color: var(--primary-bg);
     max-width: 900px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+    text-align: center; 
 }
 
 .hero-content h2 {
