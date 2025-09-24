@@ -135,7 +135,7 @@ header {
     width: 100%;
     background-image: url('Farmer-using-Phone.jpg');
     background-size: cover;
-    background-position: center; /* Default for desktop */
+    background-position: center;
     padding-left: 8%;
     padding-right: 0;
 }
@@ -370,98 +370,111 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
 }
 
 /* --- Responsive Design --- */
-@media (max-width: 1024px) {
-    /* For tablets and smaller laptops */
-    .input-page .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .left-panel, .right-panel {
-        max-width: 600px;
-    }
-}
-
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 1rem;
     }
-
+    
+    /* Make the nav menu a collapsable hamburger menu on mobile */
     .nav-menu {
-        display: none;
+        display: none; /* This will be toggled by a JS class */
         flex-direction: column;
         width: 100%;
         margin-top: 1rem;
+        background-color: var(--primary-bg);
+    }
+    
+    .nav-menu.active {
+        display: flex; /* Show menu when active */
     }
 
     .nav-menu li {
         width: 100%;
+        text-align: center;
         margin: 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
     }
 
     .nav-menu a {
         display: block;
-        padding: 0.5rem 0;
-        border-bottom: none;
-        text-align: center;
+        padding: 0.8rem 0;
+        font-weight: 500;
     }
 
     .nav-right {
         width: 100%;
         justify-content: space-between;
         margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .search-bar {
+        width: 100%;
     }
 
     .web-lang-select {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
         gap: 0.5rem;
     }
-
+    
     .hero {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        height: 80vh;
-        align-items: flex-end;
+        padding: 1rem;
+        height: 60vh; /* Adjust height for a better fit */
         background-position: center bottom;
-        background-size: contain;
+        background-size: cover; /* Use cover to fill the area */
         background-repeat: no-repeat;
+        justify-content: center; /* Center content horizontally */
+        align-items: flex-end; /* Align hero-content to the bottom */
     }
 
     .hero-content {
-        padding: 2rem;
-        max-width: 100%;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        margin-bottom: 2rem;
+        padding: 1.5rem;
+        max-width: 95%;
+        margin-bottom: 1rem;
     }
 
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .hero-content .subtitle {
-        font-size: 1rem;
+    .hero-content .subtitle, .hero-content .date {
+        font-size: 0.9rem;
     }
-
-    .hero-content .date {
-        margin-bottom: 1.5rem;
+    
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
     }
 
     .form-heading {
         font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .input-page .container {
         flex-direction: column;
         padding: 0.5rem;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .left-panel, .right-panel {
         padding: 1.5rem;
         max-width: 100%;
         min-width: unset;
+        width: 100%;
     }
 
     .left-panel {
@@ -469,7 +482,7 @@ button, select, input[type="text"], input[type="date"], input[type="file"] {
     }
 
     .site-footer {
-        padding: 1.5rem 1rem;
+        padding: 1rem;
     }
 
     .footer-links, .footer-social {
